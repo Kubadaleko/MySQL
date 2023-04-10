@@ -1,0 +1,26 @@
+. Создать файл my.sql, в котором должна создаваться таблица с информацией об одногруппниках.
+ В таблице должно быть четыре поля: id, name, age, address. Все поля в таблице обязательны для заполнения.
+
+Необходимо добавить 5-10 одногруппников в данную таблицу.
+
+Необходимо написать запрос на получение имен всех одногруппников (только имен, 
+без всего остального), которые живут в Москве и их возраст находится в диапазоне [18, 30) лет.
+
+
+
+-- create
+CREATE TABLE EMPLOYEE (
+  Id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  age TEXT NOT NULL,
+  adress TEXT NOT NULL
+);
+
+-- insert
+INSERT INTO EMPLOYEE VALUES (1, 'Иванов', '25','Москва');
+INSERT INTO EMPLOYEE VALUES (2, 'Козлов', '53','Чеховская');
+INSERT INTO EMPLOYEE VALUES (3, 'Ослов', '27','Смеховская');
+INSERT INTO EMPLOYEE VALUES (4, 'Петров', '41','Москва');
+INSERT INTO EMPLOYEE VALUES (5, 'Серов', '30','Средняя');
+-- fetch 
+SELECT name FROM EMPLOYEE WHERE adress = 'Москва' AND age < 30 AND age > 18;
